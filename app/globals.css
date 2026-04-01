@@ -1,26 +1,78 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --ob-crust: #11111b;
+    --ob-mantle: #181825;
+    --ob-base: #1e1e2e;
+    --ob-surface0: #313244;
+    --ob-surface1: #45475a;
+    --ob-surface2: #585b70;
+
+    --ob-text: #cdd6f4;
+    --ob-subtext1: #bac2de;
+    --ob-subtext0: #a6adc8;
+    --ob-overlay2: #9399b2;
+    --ob-overlay1: #7f849c;
+    --ob-overlay0: #6c7086;
+
+    --ob-mauve: #cba6f7;
+    --ob-lavender: #b4befe;
+    --ob-blue: #89b4fa;
+    --ob-sapphire: #74c7ec;
+    --ob-green: #a6e3a1;
+    --ob-yellow: #f9e2af;
+    --ob-peach: #fab387;
+    --ob-red: #f38ba8;
+
+    --background: var(--ob-base);
+    --foreground: var(--ob-text);
+
+    --game-red: #f87171;
+    --game-blue: #60a5fa;
+    --game-yellow: #facc15;
+    --marker-0: #f87171;
+    --marker-1: #60a5fa;
+    --marker-2: #4ade80;
+    --marker-3: #c084fc;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-background: var(--ob-base);
+    --color-foreground: var(--ob-text);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    color-scheme: dark;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--ob-crust);
+    color: var(--ob-text);
+    font-family: var(--font-geist-sans, "Segoe UI", system-ui, sans-serif);
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 100dvh;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--ob-surface1);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--ob-surface2);
 }
