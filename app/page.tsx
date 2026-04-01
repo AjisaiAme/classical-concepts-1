@@ -196,12 +196,12 @@ export default function ClassicalConceptsSim() {
     );
     const isShapeCell = rowIdx % 2 === 0 && colIdx % 2 === 0;
 
-    let bg = C.surface0;
-    let border = C.surface1;
-    let color = C.overlay0;
+    let bg: string = C.surface0;
+    let border: string = C.surface1;
+    let color: string = C.overlay0;
     let label: React.ReactNode = "·";
     let fw = 400;
-    let glow = "none";
+    let glow: string = "none";
 
     if (isShapeCell && value > 0) {
       if (value === 2) {
